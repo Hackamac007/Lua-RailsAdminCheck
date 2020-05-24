@@ -56,7 +56,7 @@ action = function(host, port)
 	local vuln_railsApp = check_admin(host, port, DEFAULT_ADMIN_URI)
   local output = {}
 	if not vuln_railsApp then
-		stdnse.print_debug(1,"%s: This does not look like a vulnerable Rails app", SCRIPT_NAME)
+		stdnse.print_debug(1,"%s: Not a vulnerable Rails app", SCRIPT_NAME)
 		return
   else
     output = string.match(vuln_railsApp["body"], "%<td%>.*%<%/td%>")
